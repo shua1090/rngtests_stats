@@ -13,3 +13,9 @@ class RNG:
     @abstractmethod
     def getNextN(self, n):
         pass
+
+    def __enter__(self):
+        pass
+
+    def __exit__(self):
+        pass
