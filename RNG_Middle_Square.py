@@ -1,16 +1,21 @@
-#John Neumann's middle square method
 
-seed_number = int(input("Please enter a four-digit number:\n[####] "))
-number = seed_number
-already_seen = set()
-counter = 0
 
-while number not in already_seen:
-    counter += 1
-    already_seen.add(number)
-    number = int(str(number * number).zfill(8)[2:6])  # zfill adds padding of zeroes
-    print(f"#{counter}: {number}")
+class RNG_Middle_Square(RNG):
+    def __init__(self,seed):
+        self.number = seed
+        self.internal_rng = internal_gen()
+        pass
+    
+    def internal_gen(self):
+        while True:
+            self.number = int(str(self.number*self.number).zfill(8)[2:6])
+            yield self.number % 255
 
-print(f"We began with {seed_number} and"
-      f" have repeated ourselves after {counter} steps"
-      f" with {number}.")
+    def getNext(self):
+        while True:
+            yield next(self.internal_rng)
+    def getNextN(self, n):
+        nextn = []
+        for i in range(n):
+            nextn.append(next(self.internal_rng))
+        return nextn
