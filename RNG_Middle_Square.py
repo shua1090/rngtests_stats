@@ -1,9 +1,9 @@
-
+from RNG import RNG
 
 class RNG_Middle_Square(RNG):
     def __init__(self,seed):
         self.number = seed
-        self.internal_rng = internal_gen()
+        self.internal_rng = self.internal_gen()
         pass
     
     def internal_gen(self):

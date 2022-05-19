@@ -4,7 +4,7 @@ import subprocess
 import jpype as jp
 class RNG_Java_SecureRandom(RNG):
     def __init__(self):
-        jp.startJVM(jp.getDefaultJVMPath(), "-ea")
+        # jp.startJVM(jp.getDefaultJVMPath(), "-ea")
         self.internal_java_rng = jp.java.security.SecureRandom()
         self.internal_rng = self.internal_gen()
         

@@ -1,13 +1,16 @@
 # Get ram used at any given moment and modulus it
+from RNG import RNG
 import psutil
-class RNG_ur(RNG):
+class RNG_RAM(RNG):
     def __init__(self):
         self.internal_rng = self.internal_gen()
         pass
 
     def internal_gen(self):
         while True:
-            yield psutil.virtual_memory().free % 256
+            a = psutil.virtual_memory().used % 256
+            print("a", a, a%256)
+            yield a
 
     def getNext(self):
         while True:
