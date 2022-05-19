@@ -19,3 +19,6 @@ class RNG:
 
     def __exit__(self):
         pass
+
+    def close(self):
+        pass

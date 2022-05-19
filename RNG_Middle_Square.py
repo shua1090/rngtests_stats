@@ -9,7 +9,7 @@ class RNG_Middle_Square(RNG):
     def internal_gen(self):
         while True:
             self.number = int(str(self.number*self.number).zfill(8)[2:6])
-            yield self.number % 255
+            yield self.number % 256
 
     def getNext(self):
         while True:

@@ -21,3 +21,9 @@ class RNG_ur(RNG):
         for i in range(n):
             nextn.append(next(self.internal_rng))
         return nextn
+
+if __name__ == "__main__":
+    a = RNG_ur()
+    for i in a.getNext():
+        if i == 255:
+            print(i)
