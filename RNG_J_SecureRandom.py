@@ -25,3 +25,8 @@ class RNG_Java_SecureRandom(RNG):
         for i in range(n):
             nextn.append(next(self.internal_rng))
         return nextn
+
+if __name__ == "__main__":
+    a = RNG_Java_SecureRandom()
+    for i in a.getNextN(50):
+        print(i)
