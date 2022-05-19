@@ -57,23 +57,23 @@ if __name__ == "__main__":
 
     print("Begin")
     urandom_result = run_urandom(SAMPLE_SIZE)
-    print(urandom_result.get_average())
+    print('urandom:', urandom_result.get_average())
 
     j_random_result = run_j_random(SAMPLE_SIZE)
-    print(j_random_result.get_average())
+    print('util.java:', j_random_result.get_average())
 
     j_secure_result = run_j_secure_random(SAMPLE_SIZE)
-    print(j_secure_result.get_average())
+    print('security.Secure...:', j_secure_result.get_average())
 
     ms_result = run_middle_square(SAMPLE_SIZE)
-    print(ms_result.get_average())
+    print('Middle Square:', ms_result.get_average())
 
     aes_result = run_chained_AES(SAMPLE_SIZE)
-    print(aes_result.get_average())
+    print('AES:', aes_result.get_average())
 
     ram_result = run_RAM(SAMPLE_SIZE)
-    ram_result.print_all()
-    print(ram_result.get_average())
+    # ram_result.print_all()
+    print('RAM:', ram_result.get_average())
     # import matplotlib.pyplot as plt
     # fig = plt.figure()
     # ax = fig.add_axes([0,0,1,1])
